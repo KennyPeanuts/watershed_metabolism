@@ -1,8 +1,9 @@
 # Cleaning Script for .csv files that are exported from the YSI EXO2
 
 ## Import the data file as text
-      
-    dirty.csv <- readLines("./data/chalgrove_lake_4April2019.csv", skipNul = T)
+
+   input.raw.file <- "./data/chalgrove_lake_4April2019_raw.csv"
+   YSI.raw <- readLines(input.raw.file, skipNul = T)
 
 ### Notes
 
@@ -10,7 +11,7 @@ At this point the data file contains 18 lines of metadata before the data begin.
 
 ## Remove metadata
 
-    allrows.csv <- dirty.csv[-c(1:18) ]
+    YSI.raw.rows<- YSI.raw[-c(1:18) ]
 
 ### Notes
     
@@ -18,17 +19,50 @@ Now the file has an extra row between each row of data values
 
 ## Remove extra rows
 
-    data.csv <- allrows.csv[ c(TRUE, FALSE) ] # this selects every other row beginning with the first row
+    YSI.raw.data <- YSI.raw.rows[ c(TRUE, FALSE) ] # this selects every other row beginning with the first row
 
 ## Rename the header names in the first row
     
-    data.csv[1] <- c("date, time, fract_sec, site_name, cond, nLF cond, perc_ODO, perc_local_ODO, ODO_conc, sal, sp_cond, TDS, pH, pH_mV, temp, battery, cable_pwr")
+    YSI.raw.data[1] <- c("date, time, fract_sec, site_name, cond, nLF cond, perc_ODO, perc_local_ODO, ODO_conc, sal, sp_cond, TDS, pH, pH_mV, temp, battery, cable_pwr")
     
 ## Write to csv file
-    
-    write.table(data.csv, file = "./data/chalgrove_lake_4April2019_clean.csv", quote = F, row.names = F) 
 
-## Import csv as a data.frame
+    output.raw.data.file <- "./data/chalgrove_lake_4April2019_raw_data.csv" # file name format = ./data/lake_date_raw_data.csv
     
-    data <- read.table("./data/chalgrove_lake_4April2019_clean.csv", header = T, sep = ",")
+    writeLines(YSI.raw.data, con = output.raw.data.file) 
+
+## Import raw data-only csv file as a data.frame
+    
+    YSI <- read.table(output.raw.data.file, header = T, sep = ",")
+    
+## Merge Date and time
+    
+    date.time <- paste(as.character(YSI$date), as.character(YSI$time))
+   
+## Convert date to YYYY-MM-DD HH:MM:SS
+    
+    date.time <- strptime(as.character(date.time), format = "%m/%d/%Y %H:%M:%S") # produces POSIXlt, which is a list
+    date.time <- as.POSIXct(date.time) # converts to POSIXct, which can be used as a variable
+    
+## Add date.time to YSI data.frame
+    
+    YSI.total <- data.frame(date.time, YSI)
+
+## Remove values when YSI was out of the water
+    
+    # Input date and time deployment began (YYYY-MM-DD HH:MM:SS)
+    deploy.begin <- as.POSIXct("2019-03-28 14:20:00")
+    
+    # Input date and time deployment ended (YYYY-MM-DD HH:MM:SS)
+    deploy.end <- as.POSIXct("2019-04-04 13:44:00")     
+
+    YSI.begin <- YSI.total[YSI.total$date.time > deploy.begin, ]    
+    YSI <- YSI.begin[YSI.begin$date.time < deploy.end, ]    
+
+## Write new data file of cleaned data
+
+    output.clean.file <- "./data/chalgrove_lake_4April2019.csv" 
+    # file name format = ./data/lake_date.csv
+    
+    write.table(YSI, file = output.clean.file, row.names = F, quote = F, sep = ",")
     
