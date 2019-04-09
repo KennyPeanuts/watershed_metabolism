@@ -18,5 +18,17 @@ Now the file has an extra row between each row of data values
 
 ## Remove extra rows
 
-    data.csv <- gsub(pattern != "", x = allrows.csv)
+    data.csv <- allrows.csv[ c(TRUE, FALSE) ] # this selects every other row beginning with the first row
+
+## Rename the header names in the first row
+    
+    data.csv[1] <- c("date, time, fract_sec, site_name, cond, nLF cond, perc_ODO, perc_local_ODO, ODO_conc, sal, sp_cond, TDS, pH, pH_mV, temp, battery, cable_pwr")
+    
+## Write to csv file
+    
+    write.table(data.csv, file = "./data/chalgrove_lake_4April2019_clean.csv", quote = F, row.names = F) 
+
+## Import csv as a data.frame
+    
+    data <- read.table("./data/chalgrove_lake_4April2019_clean.csv", header = T, sep = ",")
     
