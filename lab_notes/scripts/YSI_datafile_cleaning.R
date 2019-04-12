@@ -23,7 +23,7 @@ At this point the data file contains 18 lines of metadata before the data begin.
 
 ## Extract metadata
 
-    YSI.metadata <- YSI.raw[c(1:19)]
+    YSI.metadata <- YSI.raw[c(3:19)]
     YSI.raw.rows <- YSI.raw[-c(1:18) ]
 
 ### Notes
