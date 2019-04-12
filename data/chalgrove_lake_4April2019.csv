@@ -1,4 +1,4 @@
-date.time,date,time,fract_sec,site_name,cond,nLF.cond,perc_ODO,perc_local_ODO,ODO_conc,sal,sp_cond,TDS,pH,pH_mV,temp,battery,cable_pwr
+date.time,date,time,fract_sec,site_name,cond,nLF_cond,perc_ODO,perc_local_ODO,ODO_conc,sal,sp_cond,TDS,pH,pH_mV,temp,battery,cable_pwr
 2019-03-28 14:25:00,3/28/2019,14:25:00,0,NA,87.6,118.3,117.1,117.1,12.59,0.05,116.3,76,6.96,-3,12.073,3.07,1.6
 2019-03-28 14:30:00,3/28/2019,14:30:00,0,NA,87.5,118.5,117.2,117.2,12.64,0.05,116.5,76,6.99,-4.7,11.984,3.07,1.5
 2019-03-28 14:35:00,3/28/2019,14:35:00,0,NA,87.8,118.3,117.3,117.3,12.59,0.05,116.3,76,6.99,-4.9,12.176,3.07,1.4

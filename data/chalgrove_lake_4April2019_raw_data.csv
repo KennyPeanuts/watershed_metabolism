@@ -1,4 +1,4 @@
-date, time, fract_sec, site_name, cond, nLF cond, perc_ODO, perc_local_ODO, ODO_conc, sal, sp_cond, TDS, pH, pH_mV, temp, battery, cable_pwr
+date, time, fract_sec, site_name, cond, nLF_cond, perc_ODO, perc_local_ODO, ODO_conc, sal, sp_cond, TDS, pH, pH_mV, temp, battery, cable_pwr
 3/28/2019,13:15:00,0.0,,0.0,0.0,118.4,118.4,10.71,0.00,0.0,0,6.42,28.4,20.279,3.05,1.6
 3/28/2019,13:20:00,0.0,,-0.1,-0.2,114.5,114.5,10.37,0.00,-0.2,0,6.81,5.7,20.227,3.06,1.6
 3/28/2019,13:25:00,0.0,,-0.1,-0.2,116.8,116.8,10.44,0.00,-0.2,0,6.99,-4.9,20.893,3.07,1.6
