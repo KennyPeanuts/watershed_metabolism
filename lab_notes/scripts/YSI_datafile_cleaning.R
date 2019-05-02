@@ -2,16 +2,20 @@
 
 ## Input filenames
 
-   input.raw.file <- "./data/chalgrove_lake_4April2019_raw.csv"
+   input.raw.file <- "./data/chalgrove_lake_2019-04-25_raw.csv"
    
-   output.raw.data.file <- "./data/chalgrove_lake_4April2019_raw_data.csv" # file name format = ./data/lake_date_raw_data.csv
+   output.raw.data.file <- "./data/chalgrove_lake_2019-04-25_raw_data.csv" # file name format = ./data/lake_date_raw_data.csv
    
-   output.clean.file <- "./data/chalgrove_lake_4April2019.csv" 
+   output.clean.file <- "./data/chalgrove_lake_2019-04-25.csv" 
     # file name format = ./data/lake_date.csv
    
-   metadata.file <- "./metadata/chalgrove_lake_4April2019_metadata.txt" 
+   metadata.file <- "./metadata/chalgrove_lake_2019-04-25_metadata.txt" 
     # file name format = ./data/lake_date.csv
+
+## Input Deployment Begin and End
    
+    in.water <- "2019-04-04 14:25:00"
+    out.water <- "2019-04-25 11:38:00"
   
 ## Import the data file as text
    
@@ -62,10 +66,10 @@ Now the file has an extra row between each row of data values
 ## Remove values when YSI was out of the water
     
     # Input date and time deployment began (YYYY-MM-DD HH:MM:SS)
-    deploy.begin <- as.POSIXct("2019-03-28 14:20:00")
+    deploy.begin <- as.POSIXct(in.water)
     
     # Input date and time deployment ended (YYYY-MM-DD HH:MM:SS)
-    deploy.end <- as.POSIXct("2019-04-04 13:44:00")     
+    deploy.end <- as.POSIXct(out.water)     
 
     YSI.begin <- YSI.total[YSI.total$date.time > deploy.begin, ]    
     YSI <- YSI.begin[YSI.begin$date.time < deploy.end, ]    
