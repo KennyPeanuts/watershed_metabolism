@@ -1,0 +1,3 @@
+"TIMESTAMP","RECORD","BattV_Avg","BattV","BP_mmHg_Avg","BP_mmHg_Std","BP_mmHg","Rain_mm_Tot","AirTC_Avg","AirTC_Std","AirTC","RH","RH_Min","RH_TMn","RH_Max","RH_TMx"
+"TS","RN","Volts","Volts","mmHg","mmHg","mmHg","mm","Deg C","Deg C","Deg C","%","%","%","%","%"
+"","","Avg","Smp","Avg","Std","Smp","Tot","Avg","Std","Smp","Smp","Min","TMn","Max","TMx"

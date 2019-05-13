@@ -1,0 +1,3 @@
+"TIMESTAMP","RECORD","BattV_Min","SlrkW_Avg","SlrkW_Std","SlrkW","SlrMJ_Tot","WS_ms_Avg","WS_ms_Std","WS_ms","WindDir","WS_ms_S_WVT","WindDir_D1_WVT","WindDir_SD1_WVT"
+"TS","RN","Volts","kW/m^2","kW/m^2","kW/m^2","MJ/m^2","meters/sec","meters/sec","meters/sec","degrees","meters/sec","meters/sec","meters/sec"
+"","","Min","Avg","Std","Smp","Tot","Avg","Std","Smp","Smp","WVc","WVc","WVc"
