@@ -59,6 +59,19 @@ At this point the data file contains 5 lines of metadata before the data begin a
 ## Merge T1 and T2   
 
    LP.weather <- merge(LP.weather.T1, LP.weather.T2, by = "TIMESTAMP")
+   
+## Clean up TIMESTAMP
+### Convert TIMESTAMP to POSIXct
+
+    LP.weather$TIMESTAMP <- as.POSIXct(LP.weather$TIMESTAMP)
+    
+### Create DATE variable
+    
+    DATE <- as.Date(strptime(LP.weather$TIMESTAMP, format = "%Y-%m-%d"))
+
+### Add DATE to LP.weather data.frame
+    
+    LP.weather <- data.frame(DATE, LP.weather)
 
 ## Write new data file of cleaned data
 
