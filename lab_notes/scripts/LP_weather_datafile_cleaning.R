@@ -12,8 +12,6 @@
    output.clean.file <- "./data/LP_weather_2019-05-10.csv" 
     # file name format = ./data/site_date.csv
 
-   metadata.T1.temp <- "./metadata/T1_temp.csv"   
-   metadata.T2.temp <- "./metadata/T2_temp.csv"   
    metadata.file <- "./metadata/LP_weather_2019-05-10_metadata.txt" 
     # file name format = ./data/site_date.csv
 
@@ -67,19 +65,17 @@ At this point the data file contains 5 lines of metadata before the data begin a
     write.table(LP.weather, file = output.clean.file, row.names = F, quote = F, sep = ",")
 
 ## Generate Metadata
-### Make temp files for T1 and T2
     
-    writeLines(LP.weather.T1.metadata[-1], con = metadata.T1.temp)
-    writeLines(LP.weather.T2.metadata[-1], con = metadata.T2.temp)
+### Combine T1 and T2 metadata files
+    
+    LP.weather.metadata <- c(LP.weather.T1.metadata, LP.weather.T2.metadata)
+
+### Write to metadata text file
    
-    metadata.T1 <- read.table(metadata.T1.temp, header = F) 
-    metadata <- c(YSI.metadata, "Deploy Begin:", as.character(deploy.begin), "Deploy End:", as.character(deploy.end), "Temp/Cond Calibration:", as.character(temp_cond_calb_date), "pH Calibration:", as.character(pH_calib_date), "ODO Calibration:", as.character(ODO_calib_date))
-    writeLines(metadata, con = metadata.file) 
+    writeLines(LP.weather.metadata, con = metadata.file) 
     
 ### Remove temp files
     
     file.remove(output.T1.data.file, showWarnings = T)
     file.remove(output.T2.data.file, showWarnings = T)
-    file.remove(metadata.T1.temp)
-    file.remove(metadata.T2.temp)
     
