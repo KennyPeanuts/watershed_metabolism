@@ -3,27 +3,27 @@
 ## Enter User Data
 ### Input filenames
 
-   input.raw.file <- "./data/chalgrove_lake_2019-08-28_raw.csv"
+   input.raw.file <- "./data/chalgrove_lake_2019-09-11_raw.csv"
    
-   output.raw.data.file <- "./data/chalgrove_lake_2019-08-28_raw_data.csv" # file name format = ./data/lake_date_raw_data.csv
+   output.raw.data.file <- "./data/chalgrove_lake_2019-09-11_raw_data.csv" # file name format = ./data/lake_date_raw_data.csv
    
-   output.clean.file <- "./data/chalgrove_lake_2019-08-28.csv" 
+   output.clean.file <- "./data/chalgrove_lake_2019-09-11.csv" 
     # file name format = ./data/lake_date.csv
    
-   metadata.file <- "./metadata/chalgrove_lake_2019-08-28_metadata.txt" 
+   metadata.file <- "./metadata/chalgrove_lake_2019-09-11_metadata.txt" 
     # file name format = ./data/lake_date.csv
 
 ### Input Deployment Begin and End
    
-    in.water <- "2019-08-08 08:41:00"
-    out.water <- "2019-08-28 13:26:00" 
+    in.water <- "2019-08-08 13:59:00"
+    out.water <- "2019-08-28 12:41:00" 
 
 ### Input Calibration Data
     
     # These are the dates that the sensors were calibrated
-    temp_cond_calb_date <- "2019-07-26"
-    pH_calib_date <- "2019-07-26"
-    ODO_calib_date <- "2019-08-08"
+    temp_cond_calb_date <- "2019-09-11"
+    pH_calib_date <- "2019-09-11"
+    ODO_calib_date <- "2019-09-11"
     
 ## Import the data file as text
    
