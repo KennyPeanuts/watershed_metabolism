@@ -15,15 +15,15 @@
 
 ### Input Deployment Begin and End
    
-    in.water <- "2019-08-08 13:59:00"
-    out.water <- "2019-08-28 12:41:00" 
+    in.water <- "2019-08-28 13:59:00"
+    out.water <- "2019-09-11 12:41:00" 
 
 ### Input Calibration Data
     
     # These are the dates that the sensors were calibrated
-    temp_cond_calb_date <- "2019-09-11"
-    pH_calib_date <- "2019-09-11"
-    ODO_calib_date <- "2019-09-11"
+    temp_cond_calb_date <- "2019-07-26"
+    pH_calib_date <- "2019-07-26"
+    ODO_calib_date <- "2019-08-28"
     
 ## Import the data file as text
    
