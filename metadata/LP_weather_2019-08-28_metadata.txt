@@ -1,0 +1,8 @@
+"TOA5","LP_Weather_Station_200","CR200X","25433","CR200X.Std.04","LancerParkWeatherStation.CR2","43280","Table1"
+"TIMESTAMP","RECORD","BattV_Avg","BattV","BP_mmHg_Avg","BP_mmHg_Std","BP_mmHg","Rain_mm_Tot","AirTC_Avg","AirTC_Std","AirTC","RH","RH_Min","RH_TMn","RH_Max","RH_TMx"
+"TS","RN","Volts","Volts","mmHg","mmHg","mmHg","mm","Deg C","Deg C","Deg C","%","%","%","%","%"
+"","","Avg","Smp","Avg","Std","Smp","Tot","Avg","Std","Smp","Smp","Min","TMn","Max","TMx"
+"TOA5","LP_Weather_Station_200","CR200X","25433","CR200X.Std.04","LancerParkWeatherStation.CR2","43280","Table2"
+"TIMESTAMP","RECORD","BattV_Min","SlrkW_Avg","SlrkW_Std","SlrkW","SlrMJ_Tot","WS_ms_Avg","WS_ms_Std","WS_ms","WindDir","WS_ms_S_WVT","WindDir_D1_WVT","WindDir_SD1_WVT"
+"TS","RN","Volts","kW/m^2","kW/m^2","kW/m^2","MJ/m^2","meters/sec","meters/sec","meters/sec","degrees","meters/sec","meters/sec","meters/sec"
+"","","Min","Avg","Std","Smp","Tot","Avg","Std","Smp","Smp","WVc","WVc","WVc"

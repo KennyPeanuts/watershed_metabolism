@@ -3,16 +3,16 @@
 ## Enter User Data
 ### Input filenames
 
-   input.T1.raw.file <- "./data/LP_weather_2019-04-17_T1_raw.dat"
-   input.T2.raw.file <- "./data/LP_weather_2019-04-17_T2_raw.dat"
+   input.T1.raw.file <- "./data/LP_weather_2019-08-28_T1_raw.dat"
+   input.T2.raw.file <- "./data/LP_weather_2019-08-28_T2_raw.dat"
    
-   output.T1.data.file <- "./data/LP_weather_2019-04-17_T1_data.csv" 
-   output.T2.data.file <- "./data/LP_weather_2019-04-17_T2_data.csv" 
+   output.T1.data.file <- "./data/LP_weather_2019-08-28_T1_data.csv" 
+   output.T2.data.file <- "./data/LP_weather_2019-08-28_T2_data.csv" 
    
-   output.clean.file <- "./data/LP_weather_2019-05-10.csv" 
+   output.clean.file <- "./data/LP_weather_2019-08-28.csv" 
     # file name format = ./data/site_date.csv
 
-   metadata.file <- "./metadata/LP_weather_2019-05-10_metadata.txt" 
+   metadata.file <- "./metadata/LP_weather_2019-08-28_metadata.txt" 
     # file name format = ./data/site_date.csv
 
 
