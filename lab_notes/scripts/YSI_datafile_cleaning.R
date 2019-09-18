@@ -64,6 +64,7 @@ Now the file has an extra row between each row of data values
    
 ## Convert date to YYYY-MM-DD HH:MM:SS
     
+    #date <- strptime(as.character(date), format = "%m/%d/%Y") # this may not work
     date.time <- strptime(as.character(date.time), format = "%m/%d/%Y %H:%M:%S") # produces POSIXlt, which is a list
     date.time <- as.POSIXct(date.time) # converts to POSIXct, which can be used as a variable
     
