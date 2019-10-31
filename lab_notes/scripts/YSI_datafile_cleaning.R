@@ -4,30 +4,37 @@
 
 * Modified: 2019-09-25 - KF - updated script to unclude data from the total algae sensor
 
+## Set Working Directory
+
+    setwd("~/current_research/watershed_metabolism")
+    
 ## Enter User Data
 ### Input filenames
 
-   input.raw.file <- "./data/chalgrove_lake_2019-09-25_raw.csv"
+   input.raw.file <- "./data/chalgrove_lake_2019-10-30_raw.csv"
    
-   output.raw.data.file <- "./data/chalgrove_lake_2019-09-25_raw_data.csv" # file name format = ./data/lake_date_raw_data.csv
+   output.raw.data.file <- "./data/chalgrove_lake_2019-10-30_raw_data.csv" # file name format = ./data/lake_date_raw_data.csv
    
-   output.clean.file <- "./data/chalgrove_lake_2019-09-25.csv" 
+   output.clean.file <- "./data/chalgrove_lake_2019-10-30.csv" 
     # file name format = ./data/lake_date.csv
    
-   metadata.file <- "./metadata/chalgrove_lake_2019-09-25_metadata.txt" 
+   metadata.file <- "./metadata/chalgrove_lake_2019-10-30_metadata.txt" 
     # file name format = ./data/lake_date.csv
 
 ### Input Deployment Begin and End
    
-    in.water <- "2019-09-11 17:33:00"
-    out.water <- "2019-09-25 12:55:00" 
+    in.water <- "2019-10-16 16:58:00"
+    out.water <- "2019-10-30 12:44:00" 
 
 ### Input Calibration Data
     
     # These are the dates that the sensors were calibrated
-    temp_cond_calb_date <- "2019-09-11"
-    pH_calib_date <- "2019-09-11"
-    ODO_calib_date <- "2019-09-11"
+    temp_cond_calb_date <- "2019-10-16"
+    pH_calib_date <- "2019-10-16"
+    ODO_calib_date <- "2019-10-16"
+    total_algae_date <- "2019-10-16"
+    # This is the internal battery percentage reported by the KOR Software when the sonde was removed from the water 
+    battery_perc_end <- "61 %"
     
 ## Import the data file as text
    
@@ -93,7 +100,11 @@ Now the file has an extra row between each row of data values
 
 ## Generate Metadata
     
-    metadata <- c(YSI.metadata, "Deploy Begin:", as.character(deploy.begin), "Deploy End:", as.character(deploy.end), "Temp/Cond Calibration:", as.character(temp_cond_calb_date), "pH Calibration:", as.character(pH_calib_date), "ODO Calibration:", as.character(ODO_calib_date))
-    writeLines(metadata, con = metadata.file) 
+    metadata <- c(YSI.metadata, "Deploy Begin:", as.character(deploy.begin), "Deploy End:", as.character(deploy.end), "Temp/Cond Calibration:", as.character(temp_cond_calb_date), "pH Calibration:", as.character(pH_calib_date), "ODO Calibration:", as.character(ODO_calib_date), "Total Algae Calibration:", as.character(total_algae_date), "Battery", as.character(battery_perc_end))
     
+    writeLines(metadata, con = metadata.file) 
+
+### Remove temp files
+    
+    unlink(output.raw.data.file)
     
