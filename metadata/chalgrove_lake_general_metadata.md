@@ -14,6 +14,8 @@ Where DDMonthYYY is the date that the deployment ended.
   
 ## File Modified
 
+  * 2019-10-31 by KF - added the descriptions of the total algae variables
+
 ## Description
 
 These data are from a YSI EXO2 multiparameter sonde deployed at approximatly 0.7 m in Chalgrove Lake (37.242983 N, -78.464116 W) in approximately 4 m of water.
@@ -35,6 +37,8 @@ These data are from a YSI EXO2 multiparameter sonde deployed at approximatly 0.7
   * time = the sampling time reported by the YSI (HH:MM:SS)
   * fract_sec = the smapling fractions of a second reported by the YSI
   * site_name = the site name on the YSI deployment (left blank)
+  * chl_RFU = the chlorophyll concentration (RFU)
+  * chl_conc = the chlorophyll concentration (ug/L)
   * cond = the conductivity (uS/cm)
   * nLF_cond = the nLF conductivity (uS/cm)
   * perc_ODO = the percent oxygen saturation
@@ -42,6 +46,8 @@ These data are from a YSI EXO2 multiparameter sonde deployed at approximatly 0.7
   * ODO_conc = the dissolved oxygen concentration (mg/L)
   * sal = the salinity (psu)
   * sp_cond = the specific conductivity (uS/cm)
+  * BGA_PC_RFU = the Blue-green algae Phycocyanin concentration (RFU)
+  * BGA_PC_conc = the Blue-green algae Phycocyanin concentration (ug/L)
   * TDS = the total dissolved solids (mg/L)
   * pH = the pH
   * pH mV = the millivolts of the pH sensor
