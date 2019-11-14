@@ -45,7 +45,7 @@
 
 ### Notes
 
-At this point the data file contains 18 lines of metadata before the data begin.
+  #At this point the data file contains 18 lines of metadata before the data begin.
 
 ## Extract metadata
 
@@ -54,7 +54,7 @@ At this point the data file contains 18 lines of metadata before the data begin.
 
 ### Notes
     
-Now the file has an extra row between each row of data values
+    # Now the file has an extra row between each row of data values
 
 ## Remove extra rows
 
