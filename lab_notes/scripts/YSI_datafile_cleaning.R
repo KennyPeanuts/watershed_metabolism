@@ -11,30 +11,33 @@
 ## Enter User Data
 ### Input filenames
 
-   input.raw.file <- "./data/chalgrove_lake_2019-10-30_raw.csv"
+   input.raw.file <- "./data/chalgrove_lake_2019-11-13_raw.csv"
    
-   output.raw.data.file <- "./data/chalgrove_lake_2019-10-30_raw_data.csv" # file name format = ./data/lake_date_raw_data.csv
+   output.raw.data.file <- "./data/chalgrove_lake_2019-11-13_raw_data.csv" # file name format = ./data/lake_date_raw_data.csv
    
-   output.clean.file <- "./data/chalgrove_lake_2019-10-30.csv" 
+   output.clean.file <- "./data/chalgrove_lake_2019-11-13.csv" 
     # file name format = ./data/lake_date.csv
    
-   metadata.file <- "./metadata/chalgrove_lake_2019-10-30_metadata.txt" 
+   metadata.file <- "./metadata/chalgrove_lake_2019-11-13_metadata.txt" 
     # file name format = ./data/lake_date.csv
 
 ### Input Deployment Begin and End
    
-    in.water <- "2019-10-16 16:58:00"
-    out.water <- "2019-10-30 12:44:00" 
+    in.water <- "2019-10-30 13:18:00"
+    out.water <- "2019-11-13 12:47:00" 
 
 ### Input Calibration Data
     
     # These are the dates that the sensors were calibrated
     temp_cond_calb_date <- "2019-10-16"
     pH_calib_date <- "2019-10-16"
-    ODO_calib_date <- "2019-10-16"
+    ODO_calib_date <- "2019-10-30"
     total_algae_date <- "2019-10-16"
     # This is the internal battery percentage reported by the KOR Software when the sonde was removed from the water 
-    battery_perc_end <- "61 %"
+    battery_perc_end <- "63.3 %"
+    notes <- "The pH sensor would not calibrate after the retreval so it may have gone bad during the deployment."
+    # This field is for misc. notes
+    
     
 ## Import the data file as text
    
@@ -100,7 +103,7 @@ Now the file has an extra row between each row of data values
 
 ## Generate Metadata
     
-    metadata <- c(YSI.metadata, "Deploy Begin:", as.character(deploy.begin), "Deploy End:", as.character(deploy.end), "Temp/Cond Calibration:", as.character(temp_cond_calb_date), "pH Calibration:", as.character(pH_calib_date), "ODO Calibration:", as.character(ODO_calib_date), "Total Algae Calibration:", as.character(total_algae_date), "Battery", as.character(battery_perc_end))
+    metadata <- c(YSI.metadata, "Deploy Begin:", as.character(deploy.begin), "Deploy End:", as.character(deploy.end), "Temp/Cond Calibration:", as.character(temp_cond_calb_date), "pH Calibration:", as.character(pH_calib_date), "ODO Calibration:", as.character(ODO_calib_date), "Total Algae Calibration:", as.character(total_algae_date), "Battery", as.character(battery_perc_end), "Notes", as.character(notes))
     
     writeLines(metadata, con = metadata.file) 
 
