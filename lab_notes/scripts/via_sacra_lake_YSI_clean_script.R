@@ -2,7 +2,7 @@
 
 ## Metadata
 
-* Modified: 
+     * Modified: 
 
 ## Set Working Directory
 
@@ -11,20 +11,20 @@
 ## Enter User Data
 ### Input filenames
 
-   input.raw.file <- "./data/via_sacra_pond_2019-12-18_raw.csv"
+   input.raw.file <- "./data/via_sacra_pond_2020-01-09_raw.csv"
    
-   output.raw.data.file <- "./data/via_sacra_pond_2019-12-18_raw_data.csv" # file name format = ./data/lake_date_raw_data.csv
+   output.raw.data.file <- "./data/via_sacra_pond_2020-01-09_raw_data.csv" # file name format = ./data/lake_date_raw_data.csv
    
-   output.clean.file <- "./data/via_sacra_pond_2019-12-18.csv" 
+   output.clean.file <- "./data/via_sacra_pond_2020-01-09.csv" 
     # file name format = ./data/lake_date.csv
    
-   metadata.file <- "./metadata/via_sacra_pond_2019-12-18_metadata.txt" 
+   metadata.file <- "./metadata/via_sacra_pond_2020-01-09_metadata.txt" 
     # file name format = ./data/lake_date.csv
 
 ### Input Deployment Begin and End
    
-    in.water <- "2019-12-04 13:04:00"
-    out.water <- "2019-12-18 13:16:00" 
+    in.water <- "2019-12-18 13:30:00"
+    out.water <- "2020-01-09 12:39:00" 
 
 ### Input Calibration Data
     
@@ -35,8 +35,9 @@
     total_algae_date <- "2019-11-20"
     turb_calib_date <- "2019-11-20"
     # This is the internal battery percentage reported by the KOR Software when the sonde was removed from the water 
-    battery_perc_end <- "81.9 %"
-    notes <- " "     # This field is for misc. notes
+    battery_perc_end <- "13.1 %"
+    battery_replace <- "2020-01-09"
+    notes <- "0.25 in of ice on the pond "     # This field is for misc. notes
     
 ## Import the data file as text
    
@@ -44,7 +45,7 @@
 
 ### Notes
 
-  #At this point the data file contains 18 lines of metadata before the data begin.
+  # At this point the data file contains 18 lines of metadata before the data begin.
 
 ## Extract metadata
 
@@ -102,12 +103,13 @@
 
 ## Generate Metadata
     
-    metadata <- c(YSI.metadata, "Deploy Begin:", as.character(deploy.begin), "Deploy End:", as.character(deploy.end), "Temp/Cond Calibration:", as.character(temp_cond_calb_date), "fDOM Calibration:", as.character(fdom_calib_date), "ODO Calibration:", as.character(ODO_calib_date), "Total Algae Calibration:", as.character(total_algae_date), "Turbity Calibration:", as.character(turb_calib_date), "Battery", as.character(battery_perc_end), "Notes", as.character(notes))
+    metadata <- c(YSI.metadata, "Deploy Begin:", as.character(deploy.begin), "Deploy End:", as.character(deploy.end), "Temp/Cond Calibration:", as.character(temp_cond_calb_date), "fDOM Calibration:", as.character(fdom_calib_date), "ODO Calibration:", as.character(ODO_calib_date), "Total Algae Calibration:", as.character(total_algae_date), "Turbity Calibration:", as.character(turb_calib_date), "Battery", as.character(battery_perc_end), "Battery Replaced:", as.character(battery_replace), "Notes", as.character(notes))
     
     writeLines(metadata, con = metadata.file) 
 
 ### Remove temp files
     
     unlink(output.raw.data.file)
+
     
     
