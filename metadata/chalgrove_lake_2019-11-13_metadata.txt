@@ -1,0 +1,33 @@
+KorEXO MEASUREMENT DATA FILE EXPORT
+
+
+
+FILE CREATED:,11/13/2019 6:45:51 PM
+
+
+
+,,,MEAN VALUE:,2.61,7.29,93.9,122.7,71.9,71.2,7.49,0.06,120.7,0.38,0.38,78,NA,-26.7,13.355,2.40,1.3
+
+,,,STANDARD DEVIATION:,1.08,3.09,7.2,6.7,13.1,13.0,1.12,0.00,6.6,0.22,0.22,4,0.22,12.7,2.018,0.08,0.2
+
+
+
+,,,SENSOR SERIAL NUMBER:,19A106504,19A106504,18L109169,18L109169,19A106369,19A106369,19A106369,18L109169,18L109169,19A106504,19A106504,18L109169,19A106533,19A106533,18L109169,19A106998,19A106998
+
+Date (MM/DD/YYYY),Time (HH:mm:ss),Time (Fract. Sec),Site Name,Chlorophyll RFU,Chlorophyll ug/L,Cond µS/cm,nLF Cond µS/cm,ODO % sat,ODO % local,ODO mg/L,Sal psu,SpCond µS/cm,BGA PC RFU,BGA PC ug/L,TDS mg/L,pH,pH mV,Temp °C,Battery V,Cable Pwr V
+Deploy Begin:
+2019-10-30 13:18:00
+Deploy End:
+2019-11-13 12:47:00
+Temp/Cond Calibration:
+2019-10-16
+pH Calibration:
+2019-10-16
+ODO Calibration:
+2019-10-30
+Total Algae Calibration:
+2019-10-16
+Battery
+63.3 %
+Notes
+The pH sensor would not calibrate after the retreval so it may have gone bad during the deployment.

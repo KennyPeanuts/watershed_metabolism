@@ -1,0 +1,37 @@
+KorEXO MEASUREMENT DATA FILE EXPORT
+
+
+
+FILE CREATED:,1/9/2020 5:51:32 PM
+
+
+
+,,,MEAN VALUE:,1.19,7.56,10.5,27.40,9.37,17.0,80.3,81.1,10.16,0.01,16.7,-0.42,-0.42,11,3.62,0,5.401,4.68,0.0
+
+,,,STANDARD DEVIATION:,0.78,4.23,0.5,1.40,0.50,0.3,2.5,2.5,0.37,0.00,0.2,0.10,0.10,0,23.86,0,1.291,0.14,0.0
+
+
+
+,,,SENSOR SERIAL NUMBER:,17A100234,17A100234,16M102831,17A101616,17A101616,16M102831,17A102367,17A102367,17A102367,16M102831,16M102831,17A100234,17A100234,16M102831,17A102374,17A102374,16M102831,17A101268,17A101268
+
+Date (MM/DD/YYYY),Time (HH:mm:ss),Time (Fract. Sec),Site Name,Chlorophyll RFU,Chlorophyll ug/L,Cond µS/cm,fDOM QSU,fDOM RFU,nLF Cond µS/cm,ODO % sat,ODO % local,ODO mg/L,Sal psu,SpCond µS/cm,BGA PC RFU,BGA PC ug/L,TDS mg/L,Turbidity FNU,TSS mg/L,Temp °C,Battery V,Cable Pwr V
+Deploy Begin:
+2019-12-18 13:30:00
+Deploy End:
+2020-01-09 12:39:00
+Temp/Cond Calibration:
+2019-11-20
+fDOM Calibration:
+2019-11-20
+ODO Calibration:
+2019-11-20
+Total Algae Calibration:
+2019-11-20
+Turbity Calibration:
+2019-11-20
+Battery
+13.1 %
+Battery Replaced:
+2020-01-09
+Notes
+0.25 in of ice on the pond 
