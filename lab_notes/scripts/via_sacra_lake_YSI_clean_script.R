@@ -11,33 +11,33 @@
 ## Enter User Data
 ### Input filenames
 
-   input.raw.file <- "./data/via_sacra_pond_2020-01-09_raw.csv"
+   input.raw.file <- "./data/via_sacra_pond_2020-02-14_raw.csv"
    
-   output.raw.data.file <- "./data/via_sacra_pond_2020-01-09_raw_data.csv" # file name format = ./data/lake_date_raw_data.csv
+   output.raw.data.file <- "./data/via_sacra_pond_2020-02-14_raw_data.csv" # file name format = ./data/lake_date_raw_data.csv
    
-   output.clean.file <- "./data/via_sacra_pond_2020-01-09.csv" 
+   output.clean.file <- "./data/via_sacra_pond_2020-02-14.csv" 
     # file name format = ./data/lake_date.csv
    
-   metadata.file <- "./metadata/via_sacra_pond_2020-01-09_metadata.txt" 
+   metadata.file <- "./metadata/via_sacra_pond_2020-02-14_metadata.txt" 
     # file name format = ./data/lake_date.csv
 
 ### Input Deployment Begin and End
    
-    in.water <- "2019-12-18 13:30:00"
-    out.water <- "2020-01-09 12:39:00" 
+    in.water <- "2020-01-09 13:18:00"
+    out.water <- "2020-02-14 13:01:00" 
 
 ### Input Calibration Data
     
     # These are the dates that the sensors were calibrated
-    temp_cond_calb_date <- "2019-11-20"
+    temp_cond_calb_date <- "2020-01-09"
     fdom_calib_date <- "2019-11-20"
-    ODO_calib_date <- "2019-11-20"
+    ODO_calib_date <- "2020-01-09"
     total_algae_date <- "2019-11-20"
     turb_calib_date <- "2019-11-20"
     # This is the internal battery percentage reported by the KOR Software when the sonde was removed from the water 
-    battery_perc_end <- "13.1 %"
+    battery_perc_end <- "80.8 %"
     battery_replace <- "2020-01-09"
-    notes <- "0.25 in of ice on the pond "     # This field is for misc. notes
+    notes <- "The pond was visibly turbid and had some floating plant debris from the recent rain storms on 2020-02-06"     # This field is for misc. notes
     
 ## Import the data file as text
    
