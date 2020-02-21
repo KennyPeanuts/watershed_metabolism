@@ -15,8 +15,8 @@ These notes and code are to develop the procedures for the calculation of metabo
 
 ## Import example data 
 
-     YSI <- read.table("./data/chalgrove_lake_2019-08-28.csv", header = T, sep = ",")
-     LP.weather <- read.table("./data/LP_weather_2019-08-28.csv", header = T, sep = ",")
+     YSI <- read.table("./data/chalgrove_lake_2019-04-25.csv", header = T, sep = ",")
+     LP.weather <- read.table("./data/LP_weather_2019-04-17.csv", header = T, sep = ",")
      
 
 ### Fix the stupid time date thing
@@ -33,7 +33,7 @@ In the stored .csv files, the date is not imported as POSIXct
 
 ## Calculate Metabolism for a single day
 
-    day <- "2019-08-08"
+    day <- "2019-04-19"
 
 ### Data Visualization
 #### Light
@@ -51,20 +51,26 @@ In the stored .csv files, the date is not imported as POSIXct
     
 # Calculate Metabolism
     
-    library("LakeMetabolizer")
+    #library("LakeMetabolizer")
     
 ## Using the Bookkeeping Method
     
     do.obs <- YSI$ODO_conc[YSI$date == day]
     do.sat <- YSI$perc_ODO[YSI$date == day]    
-    irr <- is.day(LP.weather$TIMESTAMP[LP.weather$DATE == day], 37.297) # the number is the latitude of the lake
+    #irr <- is.day(LP.weather$TIMESTAMP[LP.weather$DATE == day], 37.297) # the number is the latitude of the lake
+    irr <- is.day(YSI$date.time[YSI$date == day], 37.297) # the number is the latitude of the lake
     
     wnd <- LP.weather$WS_ms[LP.weather$DATE == day]
-    ts.data <- LP.weather$TIMESTAMP[LP.weather == day]
-    k.gas <- k.cole.base(wnd)
+    k.gas <- mean(k.cole.base(wnd))
     z.mix <- 3
     
     metab.bookkeep(do.obs, do.sat, k.gas, z.mix, irr)
+    met.results <- data.frame(day, metab.bookkeep(do.obs, do.sat, k.gas, z.mix, irr))
+    #metabolism <- met.results # only run for the first day
+    metabolism <- rbind(metabolism, met.results)
+    write.table(metabolism, file = "./data/metabolism_chalgrove_2019-04-04_2019-04-17.csv", quote = F, row.names = F, sep = ",")
+    
+
     
 ## Using the Kalman Filter Method
     
