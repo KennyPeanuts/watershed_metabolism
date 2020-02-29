@@ -1,40 +1,48 @@
-# Notes on Metabolism Calculations for YSI Data from Chalagrove Lake and Via Sacra Pond.
+# Script for Metabolism Calculations for YSI Data from Chalagrove Lake and Via Sacra Pond.
 
 ## Metadata
 
-* File Created: 2020-02-18 - KF
+* File Created: 2020-02-29 - KF - copied from metabolism scratch pad for modification
 * File Modified
 
 ## Description 
 
-These notes and code are to develop the procedures for the calculation of metabolism in Chalgrove Lake and in Via Sacra Pond for the Watershed Metabolism Project.
+This code is for the calculation of metabolism in Chalgrove Lake and in Via Sacra Pond  and to output a table of GPP and R for the Watershed Metabolism Project.
 
 ## Set Working Directory
 
     setwd("~/current_research/watershed_metabolism")
+   
+## Create Variables for Files
     
-## Import example data 
+   YSI.input <- "./data/chalgrove_lake_2019-05-10.csv"
+   weather.input <- "./data/LP_weather_2019-05-10.csv"
+   lake.name <- "Chalgrove_Lake"
+   metabolism.output <- "./data/metabolism_chalgrove_2019-04-04_2019-05-10.csv"
+   
+## Import data 
 
-     YSI <- read.table("./data/chalgrove_lake_2019-04-25.csv", header = T, sep = ",")
-     LP.weather <- read.table("./data/LP_weather_2019-04-17.csv", header = T, sep = ",")
+     YSI <- read.table(YSI.input, header = T, sep = ",")
+     weather <- read.table(weather.input, header = T, sep = ",")
      
 
-### Fix the stupid time date thing
+### Covert dates to POSIXct
      
-In the stored .csv files, the date is not imported as POSIXct
+    # In the stored .csv files, the date is not imported as POSIXct
      
     YSI$date <- strptime(as.character(YSI$date), format = "%m/%d/%Y")
     YSI$date <- as.POSIXct(YSI$date)
     YSI$date.time <- as.POSIXct(YSI$date.time)
     YSI$date <- as.POSIXct(YSI$date)
-    LP.weather$TIMESTAMP <- as.POSIXct(LP.weather$TIMESTAMP)
-    LP.weather$DATE <- as.POSIXct(LP.weather$DATE)
+    weather$TIMESTAMP <- as.POSIXct(weather$TIMESTAMP)
+    weather$DATE <- as.POSIXct(weather$DATE)
     
 
 ## Calculate Metabolism for a single day
 
     day <- "2019-04-19"
-
+    
+## Check Data
 ### Data Visualization
 #### Light
     
@@ -47,7 +55,6 @@ In the stored .csv files, the date is not imported as POSIXct
 #### Wind
     
     plot(WS_ms ~ TIMESTAMP, data = LP.weather, subset = DATE == day, type = "b")
-
     
 # Calculate Metabolism
     
@@ -60,15 +67,15 @@ In the stored .csv files, the date is not imported as POSIXct
     #irr <- is.day(LP.weather$TIMESTAMP[LP.weather$DATE == day], 37.297) # the number is the latitude of the lake
     irr <- is.day(YSI$date.time[YSI$date == day], 37.297) # the number is the latitude of the lake
     
-    wnd <- LP.weather$WS_ms[LP.weather$DATE == day]
+    wnd <- weather$WS_ms[weather$DATE == day]
     k.gas <- mean(k.cole.base(wnd))
     z.mix <- 3
     
     metab.bookkeep(do.obs, do.sat, k.gas, z.mix, irr)
-    met.results <- data.frame(day, metab.bookkeep(do.obs, do.sat, k.gas, z.mix, irr))
+    met.results <- data.frame(lake.name, day, metab.bookkeep(do.obs, do.sat, k.gas, z.mix, irr))
     #metabolism <- met.results # only run for the first day
     metabolism <- rbind(metabolism, met.results)
-    write.table(metabolism, file = "./data/metabolism_chalgrove_2019-04-04_2019-04-17.csv", quote = F, row.names = F, sep = ",")
+    write.table(metabolism, file = metabolism.output, quote = F, row.names = F, sep = ",")
     
 
     
