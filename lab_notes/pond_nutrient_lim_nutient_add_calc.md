@@ -35,13 +35,25 @@ These concentrations preserve the Redfield ratio of 16:1 DIN:DIP
 
 To calculate the concentration of stock needed this gets rearranged to:
 
-    Cs = (CtVt)/Vs
+    Cs = (Ct * Vs) / Vt
 
 ### DIN
 
-To get a target concentration of 8 mg/L, which equals 8 mg/L * 1 g / 1000 mg = 0.008 g/L DIN we would need:
+To get a target concentration of 8 mg/L DIN
 
-    Cs = (0.008 * 0) / 0.001 = 0.3 g/L DIN
+#### Convert to g/L DIN
+
+    8 mg/L * 1 g / 1000 mg = 0.008 g/L DIN 
+
+#### Calculate the stock concentration (Cs)
+
+Where:
+
+    Ct = 0.008 g/L DIN
+    Vs = 0.001 L
+    Vt = 0.3 L
+
+    Cs = (0.008 * 0.001) / 0.3 = 0. g/L DIN
 
 The molecular weight of NH4NO3 = 80.052 g/mol
 
