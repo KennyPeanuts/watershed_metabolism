@@ -14,9 +14,12 @@ KF
 
 These calculations are to determine the amount of stock nutrient solution that we need to add to the bottles in the nutrient limitation experiments in Campus Pond. 
 
+Based on rough calculations from the amount of TN and TP in stormwater and urban stream water I am setting the target concentrations at:
 
+    * 8 mg/L DIN
+    * 0.5 mg/L DIP
 
-Given this, I am setting the target concentrations to these levels.
+These concentrations preserve the Redfield ratio of 16:1 DIN:DIP
 
 
 ## Calculations
@@ -32,13 +35,13 @@ Given this, I am setting the target concentrations to these levels.
 
 To calculate the concentration of stock needed this gets rearranged to:
 
-    Cs = (CtVt)/Vt
+    Cs = (CtVt)/Vs
 
 ### DIN
 
-To get a target concentration of 300 ug/L, which equals 300 ug/L * 1 g / 1000000 ug = 0.0003 g/L DIN we would need:
+To get a target concentration of 8 mg/L, which equals 8 mg/L * 1 g / 1000 mg = 0.008 g/L DIN we would need:
 
-    Cs = (0.0003 * 1) / 0.001 = 0.3 g/L DIN
+    Cs = (0.008 * 0) / 0.001 = 0.3 g/L DIN
 
 The molecular weight of NH4NO3 = 80.052 g/mol
 
