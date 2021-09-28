@@ -26,7 +26,7 @@ These concentrations preserve the Redfield ratio of 16:1 DIN:DIP
 
 ### General Formula
 
-    (Vt / Ct) = (Vs / Cs)
+    (Vt * Ct) = (Vs * Cs)
 
 * Vt = the volume of the treatment bottle (L)
 * Ct = the target concentration of the treatment bottle (g/L)
@@ -35,7 +35,7 @@ These concentrations preserve the Redfield ratio of 16:1 DIN:DIP
 
 To calculate the concentration of stock needed this gets rearranged to:
 
-    Cs = (Ct * Vs) / Vt
+    Cs = (Ct * Vt) / Vs
 
 ### DIN
 
@@ -49,11 +49,13 @@ To get a target concentration of 8 mg/L DIN
 
 Where:
 
-    Ct = 0.008 g/L DIN
-    Vs = 0.001 L
-    Vt = 0.3 L
+    * the target concentration (Ct) = 0.008 g/L DIN
+    * the volume of stock added to each bottle (Vs) = 0.001 L
+    * the volume of the BOD bottle (Vt) = 0.3 L
 
-    Cs = (0.008 * 0.001) / 0.3 = 0. g/L DIN
+Therefore the concentration of the stock solution needs to be:
+
+    Cs = (0.008 * 0.3) / 0.001 = 2.4 g/L DIN
 
 The molecular weight of NH4NO3 = 80.052 g/mol
 
@@ -65,24 +67,44 @@ Thus the N is `35%` of the mass of the NH4NO3
 
     28 / 80.052 = 0.35 
 
-So to get 0.3 g/L, we need to dissolve `0.857 g` NH4NO3 into 1 L of di water
+So to get a concentration of 2.4 g/L DIN, we need to dissolve `6.857 g` NH4NO3 into 1 L of di water
 
-    0.35x = 0.3 --> x = 0.3/0.35 = 0.857
+    perc.N * N.mass = DIN.mass
+
+Solving for N.mass 
+
+    N.mass = DIN.mass / perc.N
+
+    N.mass = 2.4 / 0.35 = 6.857 g NaNO3
 
 ### Phosphorus
 
-To get a target concentration of 30 ug/L, which equals 30 ug/L * 1 g / 1000000 ug = 0.00003 g/L P we would need:
+To get a target concentration of 0.5 mg/L DIP, which equals 0.5 mg/L * 1 g / 1000 mg = 0.0005 g/L DIP we would need:
 
-    Cs = (0.00003 * 1) / 0.001 = 0.03 g/L P
+Where:
+
+    * the target concentration (Ct) = 0.0005 g/L DIP
+    * the volume of stock added to each bottle (Vs) = 0.001 L
+    * the volume of the BOD bottle (Vt) = 0.3 L
+
+Therefore the concentration of the DIP stock solution needs to be:
+
+    Cs = (0.0005 * 0.3) / 0.001 = 0.15 g/L DIP
 
 The molecular weight of KH2PO4 = 120.087
 
 The P weighs 30.97 g/mol
 
-Thus the P is `26%` of the mass of the PO4
+Thus the P is `26%` of the mass of the PO4 (perc.P)
 
-    30.97 / 120.087
+    30.97 / 120.087 = 0.258
 
-So to get 0.03 g/L P we would need to dissolve `0.115 g` PO4 into 1 L of DI water.
+So to get a stock solution of 0.15 g/L DIP we would need to dissolve `0.576 g` KH2PO4 into 1 L of DI water.
 
-    0.26x = 0.03 --> x = 0.03/0.26 = 0.115 
+    perc.P * P.mass = DIP.mass
+
+Solving for P.mass 
+
+    P.mass = DIP.mass / perc.P
+
+    P.mass = 0.15 / 0.26 = 0.576 g KH2PO4 
